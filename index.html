@@ -1,0 +1,43 @@
+<html>
+    <head>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+            <!-- <link rel="stylesheet" href="http://codemirror.net/lib/codemirror.css">
+            <script src="http://codemirror.net/lib/codemirror.js"></script>
+            <script src="http://codemirror.net/addon/edit/matchbrackets.js"></script>
+            <script src="http://codemirror.net/addon/edit/continuecomment.js"></script>
+            <script src="http://codemirror.net/mode/javascript/javascript.js"></script> -->
+            <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+            
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron" style="background-color: aliceblue;">
+                    <h1 class="display-4">HTML code converter</h1>
+                    <p class="lead">Need to display html code on your web page? Convert your HTML code and paste in between <pre>&lt;code&gt;&lt;/code&gt; or &lt;pre&gt;&lt;/pre&gt;</pre>tags</p>
+            </div>
+                <div id="editor" style="height: 350px;">
+                <p>Your code goes here...</p>
+                <p><br></p>
+                </div>
+                <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+            <a class="btn btn-primary btn-lg" href="#" role="button" data-bind="click: convert" style="margin-top: 10px" >Convert</a>
+            <div style="padding-top: 10px">
+                    <h5>Code:</h5>
+                    <p data-bind="text: text"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+    var quill = new Quill('#editor', {
+    theme: 'snow',
+    modules: {
+            "toolbar": false
+    }
+  });
+    </script>
+    <script src="script.js"></script>
+</html>
