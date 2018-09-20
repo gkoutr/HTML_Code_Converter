@@ -2,6 +2,8 @@ var viewModel = function(){
 var self = this;
 
 self.text = ko.observable("");
+self.exampleText = ko.observable("");
+self.exampleText('&lt;html&gt; &lt;head&gt; &lt;script src="script.js"&gt;&lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;h1&gt;Header&lt;/h1&gt; &lt;/body&gt; &lt;/html&gt;');
 self.convert = function(){
     var text = quill.container.innerText;
     var newText = "";
@@ -20,13 +22,10 @@ self.convert = function(){
         }
     }
     debugger;
-    self.text(newText);
+    display.insertText(0, newText);
     
     }
 };
-
-
-
 var vm = {};
 
 $(function () {
