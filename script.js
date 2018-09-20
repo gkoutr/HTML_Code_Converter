@@ -21,7 +21,6 @@ self.convert = function(){
             newText = newText + text.charAt(x);
         }
     }
-    debugger;
     display.insertText(0, newText);
     
     }
