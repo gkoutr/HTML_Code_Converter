@@ -5,6 +5,7 @@ self.text = ko.observable("");
 self.exampleText = ko.observable('&lt;html&gt; &lt;head&gt; &lt;script src="script.js"&gt;&lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;h1&gt;Header&lt;/h1&gt; &lt;/body&gt; &lt;/html&gt;');
 self.convert = function(){
     var text = quill.container.innerText;
+    quill.deleteText(0, quill.getLength());
     var newText = "";
     for(var x = 0; x < text.length; x++){
         if(text.charAt(x) == "<"){
@@ -20,9 +21,13 @@ self.convert = function(){
             newText = newText + text.charAt(x);
         }
     }
-    display.insertText(0, newText);
+    quill.insertText(0, newText);
     
     }
+};
+
+self.clear = function(){
+    quill.deleteText(0, quill.getLength());
 };
 var vm = {};
 
